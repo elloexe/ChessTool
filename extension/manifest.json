@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "ChessTool – Best Move Finder",
+  "version": "1.0.0",
+  "description": "Fast Stockfish 18 analysis with chess.com-style Brilliant/Great/Best labels. Overlay works on chess.com bot games and the analysis board.",
+  "icons": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "action": { "default_title": "ChessTool" },
+  "side_panel": { "default_path": "app/index.html" },
+  "background": { "service_worker": "background.js", "type": "module" },
+  "permissions": ["sidePanel", "offscreen", "storage"],
+  "host_permissions": ["https://api.chess.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.chess.com/*"],
+      "js": ["content/chesscom.js"],
+      "css": ["content/chesscom.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  }
+}

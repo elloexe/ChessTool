@@ -1,0 +1,9 @@
+node_modules/
+dist/
+app/vendor/
+extension/app/
+desktop/app/
+desktop/node_modules/
+desktop/release/
+app/icon.png
+desktop/icon.png

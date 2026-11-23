@@ -1,0 +1,28 @@
+{
+  "name": "chesstool-desktop",
+  "productName": "ChessTool",
+  "version": "1.0.0",
+  "description": "ChessTool – fast Stockfish best-move finder",
+  "main": "main.js",
+  "license": "GPL-3.0",
+  "author": "ChessTool",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable nsis --x64"
+  },
+  "devDependencies": {
+    "electron": "38.8.6",
+    "electron-builder": "26.0.20"
+  },
+  "build": {
+    "appId": "app.chesstool.desktop",
+    "productName": "ChessTool",
+    "files": ["main.js", "app/**/*"],
+    "directories": { "output": "release" },
+    "win": { "target": ["portable", "nsis"], "icon": "icon.png" },
+    "portable": { "artifactName": "ChessTool-${version}-portable.exe" },
+    "nsis": { "artifactName": "ChessTool-${version}-setup.exe", "oneClick": false, "allowToChangeInstallationDirectory": true },
+    "linux": { "target": ["AppImage"] },
+    "mac": { "target": ["dmg"] }
+  }
+}

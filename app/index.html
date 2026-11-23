@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChessTool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>♞ ChessTool</h1>
+    <span id="engine-status" class="status">Loading engine…</span>
+  </header>
+
+  <main>
+    <section class="board-wrap">
+      <div id="evalbar" title="Evaluation"><div id="evalfill"></div><span id="evaltext">0.0</span></div>
+      <div class="board-col">
+        <div id="board" aria-label="Chess board"></div>
+        <div class="controls">
+          <button id="btn-start" title="First position (Home)">⏮</button>
+          <button id="btn-back" title="Back (←)">◀</button>
+          <button id="btn-fwd" title="Forward (→)">▶</button>
+          <button id="btn-end" title="Last position (End)">⏭</button>
+          <button id="btn-flip" title="Flip board (F)">⇅</button>
+          <button id="btn-play" class="primary" title="Play best move (Space)">Play best</button>
+          <button id="btn-new" title="New game">New</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="panel">
+      <div id="best" class="best">
+        <div class="best-label">Best move</div>
+        <div class="best-move"><span id="best-san">—</span> <span id="best-badge" class="badge"></span></div>
+        <div id="best-why" class="best-why"></div>
+      </div>
+
+      <div id="last-move" class="last-move hidden"></div>
+
+      <h2>Top lines <small id="depth"></small></h2>
+      <ol id="lines" class="lines"></ol>
+
+      <h2>Settings</h2>
+      <label class="row">Think time <input id="think" type="range" min="0.3" max="10" step="0.1" value="1.5"> <output id="think-out">1.5s</output></label>
+      <label class="row">Lines <select id="multipv"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select></label>
+      <label class="row"><input id="auto" type="checkbox" checked> Analyze automatically</label>
+
+      <h2>Load position</h2>
+      <textarea id="import" rows="3" placeholder="Paste a FEN or a full PGN, then press Load"></textarea>
+      <div class="row gap">
+        <button id="btn-load">Load</button>
+        <button id="btn-copy-fen">Copy FEN</button>
+        <button id="btn-copy-pgn">Copy PGN</button>
+      </div>
+      <div id="msg" class="msg"></div>
+
+      <h2>Moves</h2>
+      <div id="moves" class="moves"></div>
+      <button id="btn-review" class="primary">Game review</button>
+      <div id="review-out" class="review"></div>
+
+      <h2>Import from chess.com</h2>
+      <div class="row"><input id="cc-user" type="text" placeholder="chess.com username" spellcheck="false"><button id="btn-cc">Fetch games</button></div>
+      <ul id="cc-games" class="cc-games"></ul>
+    </aside>
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

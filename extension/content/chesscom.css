@@ -1,0 +1,24 @@
+#chesstool-arrows { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100; }
+#chesstool-panel {
+  position: fixed; right: 16px; bottom: 16px; z-index: 99999; width: 270px;
+  background: #262522; color: #e8e8e8; border: 2px solid #81b64c; border-radius: 10px;
+  font: 13px/1.4 system-ui, "Segoe UI", sans-serif; padding: 10px 12px; box-shadow: 0 6px 24px rgba(0,0,0,.5);
+}
+#chesstool-panel.ct-off { opacity: .6; }
+#chesstool-panel.ct-off .ct-best, #chesstool-panel.ct-off .ct-why, #chesstool-panel.ct-off .ct-lines { display: none; }
+#chesstool-panel .ct-head { display: flex; align-items: center; gap: 8px; }
+#chesstool-panel .ct-depth { color: #999; font-size: 11px; margin-left: auto; }
+#chesstool-panel button { background: #3c3a37; color: #eee; border: 0; border-radius: 5px; padding: 3px 9px; cursor: pointer; font: inherit; }
+#chesstool-panel button:hover { background: #4b4945; }
+#chesstool-panel .ct-best { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+#chesstool-panel .ct-san { font-size: 24px; font-weight: 800; }
+#chesstool-panel .ct-badge { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 10px; color: #fff; }
+#chesstool-panel .ct-badge:empty { display: none; }
+#chesstool-panel .ct-badge.brilliant { background: #1baca6; }
+#chesstool-panel .ct-badge.great { background: #5c8bb0; }
+#chesstool-panel .ct-badge.best { background: #81b64c; }
+#chesstool-panel .ct-why { color: #aaa; font-size: 12px; }
+#chesstool-panel .ct-lines { margin: 6px 0 0; padding-left: 18px; font-size: 12px; color: #ccc; font-family: ui-monospace, Consolas, monospace; }
+#chesstool-panel .ct-lines li { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#chesstool-panel .ct-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+#chesstool-panel select { background: #3c3a37; color: #eee; border: 0; border-radius: 5px; padding: 2px 4px; }

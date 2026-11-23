@@ -1,0 +1,18 @@
+{
+  "name": "chesstool",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fast Stockfish analysis board that finds the best (and brilliant) move. Ships as a browser extension and a Windows .exe.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/test-classify.mjs",
+    "desktop": "npm run build && cd desktop && npm install && npx electron .",
+    "dist:win": "npm run build && cd desktop && npm install && npx electron-builder --win portable nsis --x64"
+  },
+  "devDependencies": {
+    "chess.js": "1.4.0",
+    "stockfish": "18.0.8"
+  },
+  "license": "GPL-3.0"
+}
